@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="angular 指令ng install -g @angular/cli **//安裝 angular cli 套件**  * ng new hello // 建立一個 hello 的目錄，透過 npm 安裝相關的套件  * ng serve // 啟動 http 伺服器 localhost:4200  * ng g c component-name // g =&amp;gt; generate   c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular 4 cli 筆記">
+<meta property="og:url" content="http://yoursite.com/2017/08/01/2017-08-01-angular-note/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="angular 指令ng install -g @angular/cli **//安裝 angular cli 套件**  * ng new hello // 建立一個 hello 的目錄，透過 npm 安裝相關的套件  * ng serve // 啟動 http 伺服器 localhost:4200  * ng g c component-name // g =&amp;gt; generate   c">
+<meta property="og:updated_time" content="2017-08-03T09:53:36.379Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular 4 cli 筆記">
+<meta name="twitter:description" content="angular 指令ng install -g @angular/cli **//安裝 angular cli 套件**  * ng new hello // 建立一個 hello 的目錄，透過 npm 安裝相關的套件  * ng serve // 啟動 http 伺服器 localhost:4200  * ng g c component-name // g =&amp;gt; generate   c">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/01/2017-08-01-angular-note/"/>
+
+
+
+
+
+  <title>Angular 4 cli 筆記 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/01/2017-08-01-angular-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Angular 4 cli 筆記</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-01T00:00:00+08:00">
+                2017-08-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/angular-4-cli/" itemprop="url" rel="index">
+                    <span itemprop="name">angular 4 cli</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="angular-指令"><a href="#angular-指令" class="headerlink" title="angular 指令"></a>angular 指令</h2><pre><code>ng install -g @angular/cli
+**//安裝 angular cli 套件**
+
+* ng new hello
+// 建立一個 hello 的目錄，透過 npm 安裝相關的套件
+
+* ng serve
+// 啟動 http 伺服器 localhost:4200
+
+* ng g c component-name
+// g =&gt; generate   c =&gt; component
+// 建立一個 component-name 的 folder 然後新增相關的檔案
+// 註冊到 app.module
+
+* ng g p pipe-name
+// p for pipe
+// 建立 Pipe 相關的檔案
+// 註冊到 app.module
+
+* ng g s service-name
+// g =&gt; generate s =&gt; service
+</code></pre><h2 id="安裝-bootstrap"><a href="#安裝-bootstrap" class="headerlink" title="安裝 bootstrap"></a>安裝 bootstrap</h2><pre><code>npm install bootstrap --save
+
+在 style.css 在開頭加上
+</code></pre><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@import</span> <span class="string">"~bootstrap/dist/css/bootstrap.css"</span>; <span class="comment">// 載入 node_modules 中的 路徑</span></div></pre></td></tr></table></figure>
+<h2 id="component"><a href="#component" class="headerlink" title="component"></a>component</h2><pre><code>Component 是最小的區塊
+Module 是 componet 的 container
+
+一個 App 最少有一個 Component 跟 Module
+
+package.json 的版本數字 ^3.3.7
+major.minor.patch
+^ 代表可以使用 major 相同的 major 版本的 3.3.8 或 3.3.9 但不能用 4.1 major 版本不同的
+</code></pre><h2 id="Directive-指示"><a href="#Directive-指示" class="headerlink" title="Directive (指示)"></a>Directive (指示)</h2><pre><code>*ngFor=&quot;let c of course&quot;
+</code></pre><p><strong>when using directive to modify structure of DOM adding or remove element , add prefix *</strong></p>
+<h2 id="Dependency-Injection"><a href="#Dependency-Injection" class="headerlink" title="Dependency Injection"></a>Dependency Injection</h2><pre><code>app.module 在 @NgModule 的 providers 中註冊要被 DI 的元件
+
+&gt; @Injectable() // 代表可被注入的 Service
+</code></pre><h2 id="Binding"><a href="#Binding" class="headerlink" title="Binding"></a>Binding</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">&lt;img src=<span class="string">"&#123;&#123;imageURL&#125;&#125;"</span>/ &gt;</div><div class="line"><span class="comment">// string interpolation binding</span></div><div class="line"></div><div class="line">&lt;img [src]=<span class="string">"imageURL"</span>/ &gt;</div><div class="line"><span class="comment">// property binding , [] 中包含的必須是 DOM 的 property</span></div><div class="line"><span class="comment">// (one way binding) &gt; component to DOM</span></div><div class="line"></div><div class="line">&lt;td [attr.colSpan]=<span class="string">"title"</span> &gt;&lt;<span class="regexp">/td &gt;</span></div><div class="line"><span class="regexp">/</span><span class="regexp">/ attribute binding ，利用 attr. 前綴 告訴編譯器</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">&lt;button class="btn btn-primary" [class.isActive]="isActive"&gt;save 123&lt;/</span>button&gt;</div><div class="line"><span class="comment">// class binding , 用來新增移除 class</span></div><div class="line"></div><div class="line">&lt;button <span class="keyword">class</span>=<span class="string">"btn btn-primary"</span> [style.backgroundColor]=<span class="string">"isActive?'blue':'silver'"</span>&gt;cancel&lt;<span class="regexp">/button&gt;</span></div><div class="line"><span class="regexp">/</span><span class="regexp">/ style binding ，用來改變 css style</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">&lt;button class="btn btn-primary" (click)="onClick($event)"&gt; click me &lt;/</span>button&gt;</div><div class="line"><span class="comment">// event binding , 事件綁定 ， $event 是 ng 規定字 代表 DOM event object</span></div><div class="line"></div><div class="line">&lt;input (keyup.enter)=<span class="string">"onKeyUp()"</span>&gt;</div><div class="line"><span class="comment">// event filtering : .enter 代表 filter 出 enter 動作才觸發</span></div><div class="line"></div><div class="line">&lt;input #email (keyup.enter)=<span class="string">"onShowEmail(email.value)"</span>&gt;</div><div class="line"><span class="comment">// templalte variable 用 #設定別名</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">class</span> CoursesComponent &#123;</div><div class="line">    title = <span class="string">"List of course"</span>;</div><div class="line">    imageURL = <span class="string">"http://lorempixel.com/400/200"</span>;</div><div class="line">    isActive = <span class="literal">false</span>;</div><div class="line"></div><div class="line">    onClick=<span class="function">(<span class="params">e</span>)=&gt;</span>&#123;</div><div class="line">        e.stopPropagation(); <span class="comment">// stop event bubbling</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"button is clicked"</span>,e);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    onKeyUp=<span class="function"><span class="params">()</span>=&gt;</span></div><div class="line">    &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"enter was pressed"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    onShowEmail=<span class="function">(<span class="params">email</span>)=&gt;</span></div><div class="line">    &#123;</div><div class="line">        <span class="built_in">console</span>.log(email);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://www.w3schools.com/jsref/dom_obj_style.asp" target="_blank" rel="external">DOM style object</a></p>
+<h2 id="雙向繫結"><a href="#雙向繫結" class="headerlink" title="雙向繫結"></a>雙向繫結</h2><pre><code>**Two binding [()] banana in a box 用來記憶語法**
+
+ngModel 是 angular 的雙向繫結語法
+</code></pre><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;input [(ngModel)]=<span class="string">"email"</span> (keyup.enter)=<span class="string">"onKeyUp()"</span>&gt;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">class</span> CoursesComponent &#123;</div><div class="line">email=<span class="string">"abc@gmail.com"</span>;</div><div class="line"></div><div class="line">onKeyUp = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.email); &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>**需要在 app.module.ts 引用 FormsModule.**
+**import {FormsModule} from &apos;@angular/forms&apos;;**
+**在 @NgModel 的 imports 屬性陣列中加入 FormsModule**
+</code></pre><h2 id="Build-in-pipe"><a href="#Build-in-pipe" class="headerlink" title="Build-in pipe"></a>Build-in pipe</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">uppercase =&gt; &#123; &#123; course.title | uppercase &#125; &#125;</div><div class="line">lowercase =&gt; &#123; &#123; course.title | lowercase &#125; &#125;</div><div class="line"></div><div class="line">decimal =&gt; &#123; &#123; course.rating | <span class="built_in">number</span>:<span class="string">"1.1-2"</span> &#125; &#125;</div><div class="line"><span class="comment">//小數點前位數.最小位數-最大位數</span></div><div class="line"></div><div class="line">currency =&gt; &#123; &#123; cource.price | currency:<span class="string">"AUD"</span> &#125; &#125;</div><div class="line"><span class="comment">//currency:"AUD":"1.1-2" 可以一直串接下去</span></div><div class="line"></div><div class="line">date =&gt; &#123; &#123; releaseDate | date:<span class="string">'shortDate'</span> &#125; &#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">class</span> CoursesComponent &#123;</div><div class="line">    price = <span class="number">233.5632</span>;</div><div class="line">    releaseDate = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2017</span>, <span class="number">10</span>, <span class="number">10</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://angular.io/api/common/DatePipe" target="_blank" rel="external">DatePipe at Angular.io</a></p>
+<h2 id="Custom-pipe"><a href="#Custom-pipe" class="headerlink" title="Custom pipe"></a>Custom pipe</h2><pre><code>pipe 跟 component 在 module 中是相同的地位，需要跟 module 註冊
+</code></pre><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123;Pipe ,PipeTransform &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"></div><div class="line"><span class="meta">@Pipe</span>(&#123;                  <span class="comment">//decorate 為 pipe</span></div><div class="line">        name:<span class="string">'summary'</span>   <span class="comment">// 真正使用時候的別名</span></div><div class="line">&#125;)</div><div class="line"><span class="keyword">export</span> <span class="keyword">class</span> SummaryPipe <span class="keyword">implements</span> PipeTransform&#123; <span class="comment">//實作 PipeTransform 的 interface</span></div><div class="line">    transform (value:<span class="built_in">string</span>,limit?:<span class="built_in">number</span>)&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Component-API"><a href="#Component-API" class="headerlink" title="Component API"></a>Component API</h2><p><strong>input property</strong><br>    import { Input } from ‘@angular/core’;</p>
+<pre><code>@Input(&apos;is-favriote&apos;) &gt; decorate a input properties and call it like a function
+// is-favriote 是別名(alise - nickName)設定
+
+別名可以讓 template 與 ts 之間的耦合降低，不因為ts 批次改名而出錯. 
+keep the contract of your components stable
+</code></pre><p><strong>output event</strong><br>    import { Output,EventEmitter } from ‘@angular/core’;</p>
+<pre><code>@Output() change=new EventEmitter( {newValue : this.isSelected} );
+在 html 的 event 新增一個 $event object 參數，代表 @Output 傳入的 object 參數
+
+可以將 object 參數的 object 型態寫成 interface 
+export 讓外部的 component 引用，形成共用
+</code></pre><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">interface</span> FavoriteChangeEventArgs &#123;</div><div class="line">     newValue: <span class="built_in">boolean</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Shadow-DOM"><a href="#Shadow-DOM" class="headerlink" title="Shadow DOM"></a>Shadow DOM</h2><pre><code>a specification (規範) enables DOM tree and style encapsulation(膠囊化).
+
+Allows us to apply scoped styles to elements
+without bleeding out to outer world.
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/29/2017-07-29-make-git-page/" rel="next" title="Git-Page Jekyll 安裝設定">
+                <i class="fa fa-chevron-left"></i> Git-Page Jekyll 安裝設定
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/04/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#angular-指令"><span class="nav-number">1.</span> <span class="nav-text">angular 指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-bootstrap"><span class="nav-number">2.</span> <span class="nav-text">安裝 bootstrap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#component"><span class="nav-number">3.</span> <span class="nav-text">component</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directive-指示"><span class="nav-number">4.</span> <span class="nav-text">Directive (指示)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dependency-Injection"><span class="nav-number">5.</span> <span class="nav-text">Dependency Injection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binding"><span class="nav-number">6.</span> <span class="nav-text">Binding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#雙向繫結"><span class="nav-number">7.</span> <span class="nav-text">雙向繫結</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Build-in-pipe"><span class="nav-number">8.</span> <span class="nav-text">Build-in pipe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Custom-pipe"><span class="nav-number">9.</span> <span class="nav-text">Custom pipe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Component-API"><span class="nav-number">10.</span> <span class="nav-text">Component API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shadow-DOM"><span class="nav-number">11.</span> <span class="nav-text">Shadow DOM</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
